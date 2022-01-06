@@ -13,7 +13,7 @@ _react() {
         '1: :->cmds' \
         '*:: :->args' && ret=0
 
-        case $state in
+        case "$state" in
             cmds)
                 _values "Create component" \
                 "create_component[Create Class Component]" && ret=0
@@ -23,7 +23,9 @@ _react() {
                     create_component)
                         _arguments \
                         '(-n --name)'{-n,--name}'[Component name]' \
-                        '(-p --path)'{-p,--path}'[Component path]' && ret=0
+                        '(-p --path)'{-p,--path}'[Component path]' \
+                        '(-c --no_css)'{-c,--no_css}'[No css import]' \
+                        '(-t --type)'{-t,--type}'[Component type]' && ret=0
                     ;;
                 esac
             ;;
